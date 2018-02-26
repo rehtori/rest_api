@@ -8,8 +8,8 @@ class database {
 	public $connection = false;
 	private $host = 'localhost';
 	private $dbName = 'database_1';
-	private $username = 'root9';
-	private $password = 'root9';
+	private $username = '';
+	private $password = '';
 	/**
 	 * gets the PDO connection
 	 * @return boolean|\PDO connection
