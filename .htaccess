@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# redirect all api calls to /api/api.php
+#RewriteRule ^api/((?!index\.php$).+)$ api.php [L,NC]
+RewriteRule ^([^/.]+?)(/.+)?$ $1.php$2 [L]
+
+
+</IfModule>
