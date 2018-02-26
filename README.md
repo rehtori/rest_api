@@ -37,15 +37,20 @@
 
 
 * **Sample Call:**
-
-  `GET`     /api/persons                  * Returns list of persons
-  `GET`     /api/persons?name=rehtori     * Returns list of persons matching the name parameter
-  `GET`     /api/persons/:id              * Returns person by id parameter
-
-  `POST`    /api/persons                  * Creates new person
-  
-  `DELETE`  /api/persons/:id              * Deletes person by id parameter
-  
-  `PUT`     /api/persons/:id              * Updates person by id parameter
-  
-  
+ * Returns list of persons
+ * `GET`	/api/persons  
+ *
+ * Returns list of persons matching the name parameter
+ * `GET`	/api/persons?name=rehtori
+ *
+ * Returns person by id parameter
+ * `GET`	/api/persons/:id
+ *
+ * Creates new person
+ * `POST`	/api/persons
+ *
+ * Deletes person by id parameter
+ * `DELETE`	/api/persons/:id
+ *
+ * Updates person by id parameter
+ * `PUT`	/api/persons/:id
