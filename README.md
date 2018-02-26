@@ -14,7 +14,7 @@
 
    Persons listing can also be filtered by name. For example `GET` /api/persons?name=mike 
 
-   `name=[string]`
+   `name=:name`
 
 * **Data Params**
 
@@ -32,7 +32,7 @@
 
   OR
 
-  * **Code:** 500 INTERNAL ERROR <br />
+  * **Code:** 500 Internal Server Error <br />
 
 
 
