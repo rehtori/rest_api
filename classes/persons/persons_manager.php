@@ -1,7 +1,7 @@
 <?php namespace rest;
 
-require_once __DIR__ . '/../database.php';
-require_once __DIR__ . '/../../models/persons.php';
+require_once 'classes/database.php';
+require_once 'models/persons.php';
 /**
  * 
  * @author janner

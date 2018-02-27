@@ -1,7 +1,7 @@
 <?php namespace rest;
 
 require_once 'classes/response.php';
-require_once 'classes/persons/persons_manager.php';
+require_once 'persons_manager.php';
 /**
  * 
  * @author janner
