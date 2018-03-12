@@ -1,10 +1,10 @@
-<?php namespace rest;
+<?php namespace rest\classes;
 /**
  * 
  * @author janner
  *
  */
-class response {
+class Response {
 	public $status;
 	public $data;
 	public $headers;

@@ -1,13 +1,13 @@
-<?php namespace rest;
+<?php namespace rest\classes\persons;
 
-require_once 'classes/database.php';
-require_once 'models/persons.php';
+use rest\classes\Database;
+
 /**
  * 
  * @author janner
  *
  */
-class persons_manager {
+class Manager {
 	private $db = false;
 	
 	/**
@@ -17,7 +17,7 @@ class persons_manager {
 	 */
 	public function create_person($data) {
 		$last_insert_id = null;
-		$person = new persons();
+		$person = new Persons();
 		$person->update_from_array($data);
 		if ($person) {
 			$db = $this->get_database();
@@ -81,7 +81,7 @@ class persons_manager {
 			':state' => $state 
 		]);
 		
-		return ($results = $stmt->fetch()) ? new persons($results) : false;
+		return ($results = $stmt->fetch()) ? new Persons($results) : false;
 	}
 	/**
 	 * gets all persons or by name
@@ -129,7 +129,7 @@ class persons_manager {
 		]);
 		$persons = [];
 		while ( $row = $stmt->fetch() ) {
-			if ($row['id']) $persons[] = new persons($row);
+			if ($row['id']) $persons[] = new Persons($row);
 		}
 		return $persons;
 	}
@@ -163,7 +163,7 @@ class persons_manager {
 		]);
 		$persons = [];
 		while ( $row = $stmt->fetch() ) {
-			if ($row['id']) $persons[] = new persons($row);
+			if ($row['id']) $persons[] = new Persons($row);
 		}
 		return $persons;
 	}
@@ -250,7 +250,7 @@ class persons_manager {
 	 */
 	public function get_database() {
 		if ($this->db === false) {
-			$database = new database();
+			$database = new Database();
 			$this->db = $database->get_PDO();
 		}
 		

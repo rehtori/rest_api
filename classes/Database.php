@@ -1,10 +1,10 @@
-<?php namespace rest;
+<?php namespace rest\classes;
 /**
  * 
  * @author janner
  *
  */
-class database {
+class Database {
 	public $connection = false;
 	private $host = 'localhost';
 	private $dbName = 'database_1';

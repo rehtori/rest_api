@@ -1,16 +1,16 @@
-<?php namespace rest;
+<?php namespace rest\classes;
 
 /**
  *
  * @author janner
  *        
  */
-class http_response {
+class HttpResponse {
 	public $status;
 	public $status_message;
 	public $data;
 	public $headers;
-	private static $status_messages = [
+	private $status_messages = [
 		100 => 'Continue',
 		101 => 'Switching Protocols',
 		102 => 'Processing',
@@ -121,7 +121,7 @@ class http_response {
 	 * sends headers
 	 */
 	private function send_headers() {
-		header("HTTP/1.1 {$this->status}");
+		header("HTTP/1.1 {$this->status} {$this->status_message}");
 		header('Content-Type: application/json');
 		header('Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate');
 		

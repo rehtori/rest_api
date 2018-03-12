@@ -1,13 +1,13 @@
-<?php namespace rest;
+<?php namespace rest\classes\persons;
 
-require_once 'classes/response.php';
-require_once 'persons_manager.php';
+use rest\classes\Response;
+
 /**
  * 
  * @author janner
  *
  */
-class persons_router {
+class Router {
 	/**
 	 * determine route to methods, return corresponding responses
 	 * @param string $method
@@ -16,10 +16,10 @@ class persons_router {
 	 * @param string $input
 	 * @return \rest\response
 	 */
-	public function route($method, $request, $query_string, $input) {
+	static public function route($method, $request, $query_string, $input) {
 		$request_item_id = isset($request[1]) ? $request[1] : null;
-		$manager = new persons_manager();
-		$response = new response();
+		$manager = new Manager();
+		$response = new Response();
 		switch ($method) {
 			case 'GET' :
 				if ($request_item_id) {

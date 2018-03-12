@@ -1,10 +1,12 @@
-<?php namespace rest;
+<?php namespace rest\classes\persons;
+use rest\classes\ApiUserException;
+
 /**
  * 
  * @author janner
  *
  */
-class persons {
+class Persons {
 	public $id;
 	public $name;
 	public $email;
@@ -34,7 +36,7 @@ class persons {
 		if ($birthday) {
 			list($dd, $mm, $yyyy) = explode('.', $birthday);
 			if (! checkdate($mm, $dd, $yyyy)) {
-				throw new api_user_exception("Birthday validation failed");
+				throw new ApiUserException("Birthday validation failed");
 			} else {
 				$this->birthday = $birthday;
 			}
